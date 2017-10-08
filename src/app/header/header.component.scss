@@ -9,7 +9,7 @@
   height: 180px;
   background: transparent;
   display: flex;
-  transition: all .5s ease;
+  transition: all .3s ease;
   &--small {
     height: 50px;
     background-color: white;
@@ -180,16 +180,22 @@
     h1 {
       font-size: 4em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 25px;
     }
     h2 {
       font-size: 1.6em;
-      margin-bottom: 10px;
+      margin-bottom: 1em;
     }
-    h2:last-child {
-      margin-bottom: 2em;
+
+    .background-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 4em;
     }
   }
+
 }
 
 @media (max-width: 768px) {

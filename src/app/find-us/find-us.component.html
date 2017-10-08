@@ -1,4 +1,9 @@
 <div class="find-us">
+  <h1>Encuentranos</h1>
+  <h2>Donde pueden encontrarnos (o algo así) para hablar con algunos de nuestros clientes (tiendas) para que los podamos
+    ubicar o referenciar en la web. También indicar que trabajamos por un comercio directo desde la granja.
+  </h2>
+
   <div class="cities">
     <div class="city" *ngFor="let city of cities">
       <div class="city__name" (click)="onSelectCity(city)">
@@ -22,12 +27,9 @@
   </div>
 
   <div class="map--hint" *ngIf="!selectedCity">
-
-    <span>
-      <i class="fa fa-arrow-up"></i>
-      Seleccione una ciudad para ver donde puede conseguir nuestros huevos
-      <i class="fa fa-arrow-up"></i>
-    </span>
+    <i>
+      Selecciona una ciudad para ver el mapa de tiendas.
+    </i>
   </div>
 
 </div>

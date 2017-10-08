@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (number > 150) {
+    if (number > 120) {
       this.smallHeader = true;
     } else if (this.smallHeader && number < 10) {
       this.smallHeader = false;

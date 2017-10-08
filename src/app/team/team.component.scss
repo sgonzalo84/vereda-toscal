@@ -23,7 +23,6 @@ app-team{
     display: flex;
     flex-wrap: wrap;
     li {
-      opacity: 0; //changed to 1 with the flyIn animation
       text-align: center;
       position: relative;
       margin: 1em;
@@ -71,28 +70,19 @@ app-team{
       position: relative;
       text-align: center;
       a{
-        opacity: 0;//changed to 1 with the flyIn animation
         display: inline-block;
         margin: 0 auto;
         width: auto;
-        padding: .8em;
-        border: 1px solid $text-color;
-        font-weight: 600;
-        transition: all .4s ease;
-        &:hover {
-          cursor: pointer;
-          color: white;
-          background-color: $Goldenrod;
-          border-color: $Goldenrod;
-        }
         i{
-          font-size: .9em;
+          font-size: .7em;
         }
         span{
           display: block;
-          margin-top: 10px;
-          text-transform: uppercase;
+          font-size: .9em;
         }
+      }
+      .button--yellow{
+        background-color: rgba( 227,138,28, .9) ;
       }
     }
 
@@ -199,27 +189,6 @@ app-team{
       }
     }
   }
-
-  .flyIn_1,.flyIn_2,.flyIn_3,.flyIn_0{
-    opacity: 1 !important;
-  }
-  .flyIn_0{
-    animation: 1.1s flyin ease 0s;
-    transition: opacity .4s ease 0s;
-  }
-  .flyIn_1{
-    animation: 1.1s flyin ease .5s;
-    transition: opacity .4s ease .5s;
-  }
-  .flyIn_2{
-    animation: 1.1s flyin ease 1s;
-    transition: opacity .4s ease 1s;
-  }
-  .flyIn_3{
-    animation: 1.1s flyin ease 1.5s;
-    transition: opacity .4s ease 1.5s;
-  }
-
 }
 
 
@@ -252,23 +221,6 @@ app-team{
         max-height: 250px;
         overflow-y: auto;
       }
-    }
-
-    .flyIn_0{
-      animation: 1.1s flyFromLeft ease 0s;
-      transition: opacity .4s ease 0s;
-    }
-    .flyIn_1{
-      animation: 1.1s flyFromLeft ease 1s;
-      transition: opacity .4s ease 1s;
-    }
-    .flyIn_2{
-      animation: 1.1s flyFromLeft ease 2s;
-      transition: opacity .4s ease 2s;
-    }
-    .flyIn_3{
-      animation: 1.1s flyFromLeft ease 3s;
-      transition: opacity .4s ease 3s;
     }
   }
 }

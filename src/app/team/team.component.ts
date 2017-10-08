@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 
 export class TeamMember {
@@ -22,7 +22,7 @@ export class TeamComponent implements OnInit {
   selectedMember: TeamMember;
   addAnimation = false;
 
-  constructor(public el: ElementRef) {
+  constructor() {
   }
 
   ngOnInit() {
@@ -74,26 +74,9 @@ export class TeamComponent implements OnInit {
     ];
   }
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const componentPosition = this.el.nativeElement.offsetTop;
-
-    const scrollPosition = window.pageYOffset;
-
-    if ((scrollPosition + 100 ) >= componentPosition) {
-      this.addAnimation = true;
-    } else {
-      this.addAnimation = false;
-    }
-  }
-
   onImageClicked(member) {
     this.selectedMember = member;
     this.modalOpen = !this.modalOpen;
-  }
-
-  getClass(index: number) {
-    return this.addAnimation ? "flyIn_" + index : null;
   }
 
 }

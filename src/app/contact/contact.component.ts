@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ContactComponent implements OnInit {
 
@@ -13,12 +14,26 @@ export class ContactComponent implements OnInit {
     message: ''
   };
   mailString: string;
+  addAnimation = false;
 
-  constructor() {
+  constructor(public el: ElementRef) {
   }
 
   ngOnInit() {
     this.mailString = 'mailto:carlosmanuel.rubio@gmail.com?subject="Consulta desde la web"&body=';
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const componentPosition = this.el.nativeElement.offsetTop;
+    const divHeight = this.el.nativeElement.offsetHeight - 80;
+    const scrollPosition = window.pageYOffset;
+
+    if ((scrollPosition + divHeight ) >= componentPosition) {
+      this.addAnimation = true;
+    } else {
+      this.addAnimation = false;
+    }
   }
 
 }

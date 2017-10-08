@@ -26,6 +26,19 @@
   }
   to {
     opacity: 1;
-    transform: scaleX(1)
+    transform: scaleX(1);
+  }
+}
+
+@keyframes flyin {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@keyframes flyFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
 }

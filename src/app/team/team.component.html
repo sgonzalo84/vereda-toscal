@@ -6,8 +6,8 @@
   </h2>
 
   <ul class="gallery">
-    <ng-container *ngFor="let member of teamMembers">
-      <li>
+    <ng-container *ngFor="let member of teamMembers;  let i = index">
+      <li [ngClass]="getClass(i)">
         <a (click)="onImageClicked(member)">
           <img [src]="member.imageSrc"/>
           <span class="name">{{member.title}}<span class="title">{{member.subtitle}}</span></span>
@@ -15,7 +15,7 @@
       </li>
 
       <div class="gallery__link">
-        <a (click)="onImageClicked(member)">
+        <a (click)="onImageClicked(member)" [ngClass]="getClass(i)">
           <i>{{member.title}} - {{member.subtitle}}</i>
           <span>¿Quieres saber más?</span>
         </a>

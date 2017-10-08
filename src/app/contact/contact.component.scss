@@ -1,5 +1,7 @@
 @import "../../colors";
-
+app-contact{
+  display: block;
+}
 .contact {
   background-color: $text-color;
   color: white;
@@ -13,8 +15,8 @@
   }
 
   .container {
+    opacity: 0;
     border: 2px solid white;
-    animation: 1.25s flyin ease;
     height: 100%;
     padding: 1em;
     max-width: 65%;
@@ -102,11 +104,9 @@
     }
   }
 
-  @keyframes flyin {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
+  .flyIn{
+    opacity: 1;
+    animation: 1.1s flyin ease;
   }
 
 }

@@ -1,0 +1,85 @@
+@import "../../colors";
+
+.find-us {
+  .cities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    .city {
+      padding: 1em;
+      text-align: center;
+      &__name {
+        font-size: 1.5em;
+        a {
+          display: block;
+          border: 1px solid $text-color;
+          padding: 1em;
+          border-radius: 25px;
+          text-decoration: none;
+          color: $text-color;
+          transition: all .2s ease-in-out 0s;
+          span {
+            display: block;
+            font-size: 2em;
+            transition: all .4s ease-in-out 0s;
+          }
+          &:hover {
+            cursor: pointer;
+            border: 1px solid $Goldenrod;
+            span {
+              display: block;
+              color: $Goldenrod;
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .map {
+    padding: 1em;
+    h3{
+      font-weight: 400;
+      margin-bottom: 1.5em;
+    }
+    agm-map {
+      height: 380px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .find-us {
+    .cities {
+      .city {
+        &__name {
+          font-size: 1.4em;
+          a {
+            padding: .8em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .find-us {
+    .cities {
+      .city {
+        &__name {
+          font-size: 1.2em;
+          a {
+            padding: 1em .5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

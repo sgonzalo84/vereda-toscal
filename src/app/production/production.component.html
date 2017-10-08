@@ -1,0 +1,19 @@
+<div class="produccion">
+  <h1>Producción</h1>
+  <h2> Valores y carácterísticas de nuestra producción. Aquí se explicaría que se trata de una produccíon basada en el
+    manejo tradicional y artesanal de las gallinas, primando la libertad en su manejo, respeto por el bienestar animal,
+    producción pequeña cercana, respeto tambén por el entorno, totalmente distinta de la grande industria, pero con las
+    máximas exigencias de calidad y seguridad alimentaria.</h2>
+
+  <div class="carousel-container">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let slide of slides">
+        <img [src]="slide.imageUrl" [alt]="slide.title">
+        <div class="carousel-caption">
+          <h3>{{slide.title}}</h3>
+          <p>{{slide.text}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

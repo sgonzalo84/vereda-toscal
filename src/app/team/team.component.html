@@ -1,0 +1,54 @@
+<div class="team" [ngClass]="{'menu-open': modalOpen == true}">
+
+  <h1>Equipo</h1>
+  <h2>Equipo de la granja. Aquí presentamos a nuestras gallinas, a los guardianes (perretes) y los granjeros: fotos y
+    texto. Aunque este punto también podemos incluirlo en el primero.
+  </h2>
+
+  <ul class="gallery">
+    <ng-container *ngFor="let member of teamMembers">
+      <li>
+        <a (click)="onImageClicked(member)">
+          <img [src]="member.imageSrc"/>
+          <span class="name">{{member.title}}<span class="title">{{member.subtitle}}</span></span>
+        </a>
+      </li>
+
+      <div class="gallery__link">
+        <a (click)="onImageClicked(member)">
+          <i>{{member.title}} - {{member.subtitle}}</i>
+          <span>¿Quieres saber más?</span>
+        </a>
+      </div>
+
+    </ng-container>
+  </ul>
+
+  <span class="close-button fa fa-close"
+        [ngClass]="{'close-button--visible': modalOpen}"
+        (click)="modalOpen = !modalOpen"></span>
+
+  <!--styles are get from the mobile-menu component-->
+  <div class="menu-container">
+    <div class="menu-sliders"></div>
+    <div class="menu-sliders"></div>
+    <div class="menu-sliders"></div>
+    <div class="menu" (click)="modalOpen = !modalOpen">
+      <div class="image-viewer" *ngIf="selectedMember!=null">
+        <div class="image">
+          <img [src]="selectedMember.imageSrc">
+        </div>
+        <div class="text-container">
+          <div class="text">
+            <h1>{{selectedMember.title}}</h1>
+            <h2>{{selectedMember.subtitle}}</h2>
+            <p>{{selectedMember.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

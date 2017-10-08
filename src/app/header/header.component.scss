@@ -1,0 +1,216 @@
+@import "../../colors";
+
+.header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: transparent;
+  display: flex;
+  transition: all .5s ease;
+  &--small {
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(214, 214, 214, 1);
+    .header__logo {
+      opacity: 0;
+      width: 0;
+      flex-grow: 0;
+    }
+    .header__logo-words {
+      opacity: 1;
+      height: auto;
+      line-height: 50px;
+      padding-left: 1em;
+      transition: opacity .6s ease-in-out 0s;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+    .header__nav {
+      ul {
+        padding-right: 0;
+        li {
+          font-size: .8em;
+          a {
+            color: $Goldenrod;
+            &:hover {
+              color: #FFF;
+            }
+          }
+        }
+      }
+    }
+    .hamburguer-bt {
+      top: 13px;
+      width: 35px;
+      height: 35px;
+      .hamburguer-bt__stripe {
+        background-color: $Goldenrod;
+        height: 3px;
+      }
+    }
+    .hamburguer-bt.on{
+      .hamburguer-bt__stripe {
+        background-color: white;
+      }
+      .hamburguer-bt__stripe__top {
+        transform: rotate(45deg) translate(10px, 5px);
+      }
+      .hamburguer-bt__stripe__bottom {
+        transform: rotate(-45deg) translate(5px, -1px);
+      }
+    }
+  }
+
+  &__logo {
+    flex-grow: 3;
+    opacity: 1;
+    transition: all .3s ease-in-out 0s;
+    background: url("../../assets/LogoVeredaToscal.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__logo-words {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    a {
+      color: $DarkGreen;
+      text-decoration: none;
+    }
+  }
+
+  &__nav {
+    flex-grow: 1;
+    ul {
+      display: flex;
+      padding-right: 1em;
+      justify-content: flex-end;
+      height: 50px;
+      align-items: center;
+      transition: all .6s ease;
+      li {
+        height: auto;
+        text-transform: uppercase;
+        font-size: .9em;
+        font-weight: 800;
+        a {
+          color: white;
+          text-decoration: none;
+          width: 100%;
+          height: 100%;
+          padding: .7em;
+          position: relative;
+          z-index: 1;
+          transition: all .5s;
+          text-align: center;
+          &:hover {
+            cursor: pointer;
+            color: white;
+          }
+          &:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            height: 1px;
+            content: '.';
+            color: transparent;
+            background: $Goldenrod;
+            visibility: none;
+            opacity: 0;
+            z-index: -1;
+            transition: all .5s;
+          }
+          &:hover:after {
+            opacity: 1;
+            visibility: visible;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-background {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  .background-image {
+    background-image: url("../../assets/b5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .background-title {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(4, 124, 52, .1);
+    color: white;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    h1, h2 {
+      height: auto;
+      width: 100%;
+      padding: 0 40px;
+    }
+    h1 {
+      font-size: 4em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+    h2:last-child {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__nav {
+      display: none;
+    }
+  }
+  .header-background {
+    .background-title {
+      h1, h2 {
+        padding: 0;
+        text-align: center;
+        transition: all .4s ease-in-out 0s;
+      }
+      h1 {
+        font-size: 3em;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.produccion {
+  .carousel-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2em;
+    .carousel-inner, .carousel-item{
+      max-height: 90vh;
+      img{
+        max-height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .produccion {
+    .carousel-container {
+      width: 85%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .produccion {
+    .carousel-container {
+      width: 99%;
+      padding: 1em 0;
+    }
+  }
+}

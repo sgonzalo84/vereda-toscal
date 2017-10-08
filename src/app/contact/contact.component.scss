@@ -1,0 +1,138 @@
+@import "../../colors";
+
+.contact {
+  background-color: $text-color;
+  color: white;
+  min-height: 350px;
+  padding: 2em;
+
+  h1 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 1em;
+  }
+
+  .container {
+    border: 2px solid white;
+    animation: 1.25s flyin ease;
+    height: 100%;
+    padding: 1em;
+    max-width: 65%;
+    margin: 0 auto;
+
+    .row {
+      display: flex;
+      padding: 1em;
+      align-items: center;
+      justify-content: center;
+      .inputs {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1em;
+
+        input, textarea {
+          width: 100%;
+          padding: 20px 0 4px 0;
+          background: transparent;
+          box-sizing: border-box;
+          border-color: #bbbbbb;
+          border-width: 0 0 2px 0;
+          color: white;
+          outline: none;
+          transition: all 0.3s;
+          font-size: 16px;
+          &:focus {
+            border-bottom: 2px solid #FFF;
+          }
+        }
+      }
+
+      .inputs input + label:after, .inputs textarea + label:after {
+        content: " ";
+      }
+
+      .inputs input:placeholder-shown + label {
+        color: #999;
+        left: 14px;
+        bottom: -8px;
+      }
+      .inputs textarea:placeholder-shown + label {
+        color: #999;
+        left: 14px;
+        bottom: 25px;
+      }
+      .inputs input:focus + label,
+      .inputs input + label {
+        position: absolute;
+        bottom: 14px;
+        left: 10px;
+        color: #999;
+        line-height: 70px;
+        pointer-events: none;
+        transition: all 0.25s;
+      }
+
+      .inputs textarea:focus + label,
+      .inputs textarea + label {
+        position: absolute;
+        bottom: 100px;
+        left: 10px;
+        color: #999;
+        pointer-events: none;
+        transition: all 0.25s;
+      }
+
+      a {
+        padding: 1em 3em;
+        background: transparent;
+        color: white;
+        font-weight: 600;
+        border: 2px solid white;
+        transition: all 0.25s;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover, &:focus {
+          background-color: white;
+          color: $text-color;
+          cursor: pointer;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  @keyframes flyin {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+}
+
+@media (max-width: 992px) {
+  .contact {
+    .container {
+      max-width: 80%;
+      .row {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    .container {
+      max-width: 90%;
+      .row {
+        padding: 1em 0;
+        .inputs {
+          padding: 0 0 1em 0;
+        }
+      }
+    }
+  }
+}
+

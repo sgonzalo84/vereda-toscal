@@ -1,0 +1,246 @@
+@import "../../colors";
+
+.team {
+  position: relative;
+
+  h1 {
+    height: auto;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .gallery {
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      text-align: center;
+      position: relative;
+      margin: 1em;
+      display: inline-block;
+      overflow: hidden;
+      background-color: black;
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 220px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: inline-block;
+        text-align: center;
+        transform: scale(1.09, 1.09);
+        transition: all .4s ease 0s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        .name {
+          opacity: 1;
+          transform: scale(1, 1);
+          transition: all .6s ease 0s;
+        }
+        .title {
+          opacity: 1;
+        }
+
+        img {
+          transform: scale(1, 1);
+          background-position: top top;
+          -webkit-filter: grayscale(0.4) blur(2px);
+          filter: grayscale(0.4) blur(2px);
+          transition: .8s all ease 0s;
+        }
+      }
+    }
+
+    &__link {
+      opacity: 0;
+      width: 0;
+      position: relative;
+      text-align: center;
+      a{
+        display: inline-block;
+        margin: 0 auto;
+        width: auto;
+        padding: .8em;
+        border: 1px solid $text-color;
+        font-weight: 600;
+        transition: all .4s ease;
+        &:hover {
+          cursor: pointer;
+          color: white;
+          background-color: $Goldenrod;
+          border-color: $Goldenrod;
+        }
+        i{
+          font-size: .9em;
+        }
+        span{
+          display: block;
+          margin-top: 10px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .name {
+      text-decoration: none;
+      text-transform: uppercase;
+      text-shadow: rgba(0, 0, 0, 0.7) 1px 1px 5px;
+      color: white;
+      font-weight: lighter;
+      font-size: 20px;
+      letter-spacing: .1em;
+      position: absolute;
+      display: block;
+      top: 40%;
+      left: 0;
+      text-align: center;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .title {
+      display: block;
+      text-transform: none;
+      font-style: italic;
+      font-size: 80%;
+      color: rgba(255, 255, 255, 0.7);
+      opacity: 0;
+      transition: all .9s ease .2s;
+    }
+
+  }
+
+  .gallery li:hover:hover img {
+    opacity: 0.5;
+  }
+
+  .close-button {
+    position: fixed;
+    right: 1em;
+    top: 25px;
+    font-size: 2.5em;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transition: all .4s ease 0s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+    &--visible {
+      opacity: 1;
+    }
+  }
+
+  /*Image container*/
+  .menu-container {
+    position: fixed;
+    height: 100%;
+    .menu {
+      align-self: center;
+    }
+    .menu-sliders {
+      &:nth-child(odd) {
+        background: rgba(0, 0, 0, .9);
+      }
+    }
+  }
+
+  .image-viewer {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .image {
+      width: calc(60% - 2em);
+      flex-grow: 1;
+      padding: 1em;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    .text-container {
+      flex-grow: 1;
+      width: 40%;
+      color: white;
+      font-size: 1em;
+      text-align: left;
+      .text {
+        padding: 1em;
+
+      }
+      h1 {
+        font-size: 1.2em;
+        text-align: left;
+
+      }
+      h2 {
+        font-size: 1.1em;
+        text-align: left;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  .team {
+    .gallery {
+      &__link {
+        opacity: 1;
+        flex-grow: 1;
+        flex-basis: 0;
+        min-width: 100%;
+        margin-bottom: 1.5em;
+        align-self: baseline;
+      }
+    }
+    .image-viewer {
+      .image {
+        width: 100%;
+        display: flex;
+        align-items:center;
+        img{
+          max-width: 90%;
+          margin: 0 auto;
+        }
+      }
+      .text-container{
+        min-height: 200px;
+        max-height: 250px;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .team {
+    .gallery {
+      li {
+        border-radius: 50%;
+      }
+      &__link {
+        margin-bottom: 2em;
+      }
+    }
+    .text-container{
+      max-height: 60vh;
+    }
+  }
+}
+
+

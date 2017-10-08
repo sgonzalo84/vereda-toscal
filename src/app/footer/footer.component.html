@@ -1,0 +1,68 @@
+<footer>
+
+  <div class="footer">
+    <div class="footer__left">
+
+      <div class="footer-image">
+
+      </div>
+
+      <p class="footer-links">
+        <ng-container *ngFor="let item of menuItems">
+          <a scrollTo [href]="item.target">{{item.text}}</a>
+          ·
+        </ng-container>
+      </p>
+
+
+    </div>
+
+    <div class="footer__center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p>Castellar de Santiago, Ciudad Real</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>625 12 29 08</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p>carlosmanuel.rubio@gmail.com</p>
+      </div>
+
+    </div>
+
+    <div class="footer__right">
+
+      <div class="about">
+        <h2>Vereda del toscal</h2>
+        <span>Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+          vehicula sit amet.</span>
+      </div>
+
+      <div class="icons">
+
+        <a href="https://www.facebook.com/veredadeltoscal/" [class.bounceIn]="mouseHover == 'face'"
+           (mouseover)="mouseHover='face'" (mouseout)="mouseHover=''">
+          <i class="fa fa-facebook-square"></i>
+        </a>
+        <a href="https://www.instagram.com/veredadeltoscal/?hl=es" [class.bounceIn]="mouseHover == 'insta'"
+           (mouseover)="mouseHover='insta'" (mouseout)="mouseHover=''">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bottom-text">
+    <p class="footer-company-name">Vereda del toscal &copy; 2017</p>
+  </div>
+
+</footer>
+
+

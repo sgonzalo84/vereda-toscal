@@ -1,0 +1,30 @@
+<div class="contact">
+
+  <h1>· Contacto ·</h1>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="inputs ">
+        <input type="text" placeholder=" " [(ngModel)]="data.name"/>
+        <label>Nombre y apellidos</label>
+      </div>
+      <div class="inputs ">
+        <input type="text" placeholder=" " [(ngModel)]="data.contact"/>
+        <label>Tu email o teléfono</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="inputs ">
+        <textarea rows="3" type="text" placeholder=" " [(ngModel)]="data.message"></textarea>
+        <label>Escribe aqui lo que te apetezca</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <a [href]="mailString +data.name + ' - ' + data.contact + ' - ' + data.message">Enviar</a>
+    </div>
+
+  </div>
+
+</div>

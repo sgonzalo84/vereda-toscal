@@ -1,0 +1,26 @@
+<div class="find-us">
+  <div class="cities">
+    <div class="city" *ngFor="let city of cities">
+      <div class="city__name" (click)="onSelectCity(city)">
+        <a (mouseover)="mouseHover=city.name" (mouseout)="mouseHover=''">
+          <span class="fa fa-map-marker" [class.bounceIn]="mouseHover == city.name"></span>
+          {{city.name}}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="map" *ngIf="selectedCity">
+    <h3>En {{selectedCity.name}} puedes encontrar nuestros huevos en: </h3>
+
+    <agm-map [latitude]="selectedCity?.location.lat" [longitude]="selectedCity?.location.long" [zoom]="15">
+      <ng-container *ngFor="let shop of selectedCity?.shops">
+        <agm-marker [latitude]="shop.marker.lat" [longitude]="shop.marker.long"></agm-marker>
+      </ng-container>
+    </agm-map>
+  </div>
+
+</div>
+
+

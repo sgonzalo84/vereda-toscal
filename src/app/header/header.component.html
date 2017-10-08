@@ -1,0 +1,33 @@
+<header>
+  <div id="home-section" class="header" [ngClass]="{'header--small': smallHeader,'menu-open': menuOpen}">
+
+    <div class="header__logo"></div>
+
+    <div class="header__logo-words">
+      <a scrollTo href="#home-section">
+        vereda<span style="color: #E38A1C">del</span>toscal
+      </a>
+    </div>
+
+    <div class="header__nav">
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a scrollTo [href]="item.target">{{item.text}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <app-mobile-menu (menuClick)="onMenuClicked($event)" [menuItems]="menuItems"></app-mobile-menu>
+
+  </div>
+
+  <div class="header-background">
+    <div class="background-image"></div>
+    <div class="background-title">
+      <h1>Huevos de corral</h1>
+      <h2>Huevos de calidad</h2>
+      <h2>Producto de proximidad</h2>
+      <h2>Sabores auténticos</h2>
+    </div>
+  </div>
+</header>

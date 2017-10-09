@@ -144,7 +144,10 @@ app-team{
     position: fixed;
     height: 100%;
     .menu {
+      opacity: 0;
       align-self: center;
+      transition: opacity .4s ease .5s;
+      transform: none;
     }
     .menu-sliders {
       &:nth-child(odd) {
@@ -188,6 +191,12 @@ app-team{
         margin-bottom: 1em;
       }
     }
+  }
+}
+
+.team.menu-open{
+  .menu {
+    opacity: 1;
   }
 }
 

@@ -21,11 +21,19 @@ export class ProductionComponent implements OnInit {
 
   ngOnInit() {
     this.slides = [
-      {title: 'Imagen 1', text: 'Aqui un texto para la imagen 1', imageUrl: '../../assets/prod1.JPG'},
-      {title: 'Imagen 2', text: 'Aqui un texto para la imagen 2', imageUrl: '../../assets/prod2.JPG'},
-      {title: 'Imagen 3', text: 'Aqui un texto para la imagen 3', imageUrl: '../../assets/prod3.JPG'},
-      {title: 'Imagen 4', text: 'Aqui un texto para la imagen 4', imageUrl: '../../assets/prod4.JPG'},
-      {title: 'Imagen 5', text: 'Aqui un texto para la imagen 5', imageUrl: '../../assets/prod5.JPG'}
+      {title: '', text: '', imageUrl: '../../assets/prod1.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod2.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod3.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod4.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod5.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod6.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod7.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod8.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod9.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod10.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod11.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod12.JPG'},
+      {title: '', text: '', imageUrl: '../../assets/prod13.JPG'}
     ];
   }
 

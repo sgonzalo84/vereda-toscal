@@ -6,16 +6,3 @@
 h4,p{
   padding: .5em 1em;
 }
-.highlight{
-  color: $DarkGoldenrod;
-}
-.top-line{
-  &:before{
-    width: calc(100% - 2em);
-    height: 2px;
-    display: block;
-    content: '';
-    margin: 1em 0 1em 1em ;
-    background-color: $Goldenrod;
-  }
-}

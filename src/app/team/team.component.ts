@@ -50,7 +50,7 @@ export class TeamComponent implements OnInit {
         id: '2',
         title: 'Epi & Blas',
         subtitle: 'Los guardianes',
-        imageSrc: '../../assets/mastines-min.JPG',
+        imageSrc: '../../assets/mastines-min.jpg',
         description: 'Epi y Blas son los encargados de proteger la granja, son hermanos y provienen de perros de guarda ' +
         'en una granja de ovejas de la zona, de raza mastín y aunque todavía son unos cachorros pesan casi 60 kilos. ' +
         'Se encuentran en la zona de entrada a la granja para recibir a quien llega, les encanta jugar uno con el otro,' +
@@ -60,7 +60,7 @@ export class TeamComponent implements OnInit {
         id: '4',
         title: 'El apoyo',
         subtitle: 'Sin ellos, no sería lo mismo',
-        imageSrc: '../../assets/DSC_2781.JPG',
+        imageSrc: '../../assets/familia.jpg',
         description: 'Este granjero no está solo, trabajar en la granja, preparar y comercializar la producción, ' +
         'lleva bastante tiempo y mucho esfuerzo, de manera que el apoyo de las personas que tiene a su alrededor hacen todo mas sencillo.'
       }

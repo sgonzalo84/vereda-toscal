@@ -65,22 +65,6 @@ export class FindUsComponent implements OnInit {
         ]
       },
       {
-        name: 'Argamasilla',
-        location: {lat: 38.7273873, long: -4.0784889999999905},
-        shops: [
-          {
-            name: 'Conroma SL',
-            address: 'Calle José Mª Rodríguez Marín, 13',
-            marker: {lat: 38.728028571249496, long: -4.080648422241211}
-          },
-          {
-            name: 'Coviran',
-            address: 'Cuesta la Rufina, 3',
-            marker: {lat: 38.72745523577625, long: -4.081217050552368}
-          }
-        ]
-      },
-      {
         name: 'Puertollano',
         location: {lat: 38.6884601, long: -4.107881700000007},
         shops: [
@@ -96,6 +80,7 @@ export class FindUsComponent implements OnInit {
         ]
       }
     ];
+    this.onSelectCity(this.cities[0]);
   }
 
   onSelectCity(city: City) {

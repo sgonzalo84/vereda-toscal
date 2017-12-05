@@ -1,4 +1,4 @@
-<div class="team" [ngClass]="{'menu-open': modalOpen == true}">
+<div class="team">
 
   <h1>Equipo</h1>
   <h2>Equipo de la granja. Aquí presentamos a nuestras gallinas, a los guardianes (perretes) y los granjeros: fotos y
@@ -24,30 +24,30 @@
     </ng-container>
   </ul>
 
-  <span class="close-button fa fa-close"
-        [ngClass]="{'close-button--visible': modalOpen}"
-        (click)="modalOpen = !modalOpen"></span>
 
-  <!--styles are get from the mobile-menu component-->
-  <div class="menu-container">
-    <div class="menu-sliders"></div>
-    <div class="menu-sliders"></div>
-    <div class="menu-sliders"></div>
-    <div class="menu" (click)="modalOpen = !modalOpen">
-      <div class="image-viewer" *ngIf="selectedMember!=null">
-        <div class="image">
-          <img [src]="selectedMember.imageSrc">
+  <ng-template #modalTemplate let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">{{selectedMember.title}} - {{selectedMember.subtitle}}</h4>
+
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span class="fa fa-times" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row no-gutters">
+        <div class="col-md-8">
+          <img class="modal-image" src="{{selectedMember.imageSrc}}">
         </div>
-        <div class="text-container">
-          <div class="text">
-            <h1>{{selectedMember.title}}</h1>
-            <h2>{{selectedMember.subtitle}}</h2>
-            <p>{{selectedMember.description}}</p>
-          </div>
+        <div class="col-md-4">
+          <p style="padding:1em">{{selectedMember.description}}</p>
         </div>
+
       </div>
     </div>
-  </div>
+    <div class="modal-footer">
+      <button type="button" class="button button--yellow" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template>
 
 </div>
 

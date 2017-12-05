@@ -1,4 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 export class TeamMember {
@@ -16,13 +17,12 @@ export class TeamMember {
   encapsulation: ViewEncapsulation.None
 })
 export class TeamComponent implements OnInit {
-
-  modalOpen = false;
+;
   teamMembers: TeamMember[];
   selectedMember: TeamMember;
-  addAnimation = false;
+  @ViewChild('modalTemplate') modalTemplate;
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
 
   ngOnInit() {
@@ -60,7 +60,7 @@ export class TeamComponent implements OnInit {
         id: '4',
         title: 'El apoyo',
         subtitle: 'Sin ellos, no sería lo mismo',
-        imageSrc: '../../assets/DSC_2781.JPG',
+        imageSrc: '../../assets/apoyo.jpg',
         description: 'Este granjero no está solo, trabajar en la granja, preparar y comercializar la producción, ' +
         'lleva bastante tiempo y mucho esfuerzo, de manera que el apoyo de las personas que tiene a su alrededor hacen todo mas sencillo.'
       }
@@ -69,7 +69,11 @@ export class TeamComponent implements OnInit {
 
   onImageClicked(member) {
     this.selectedMember = member;
-    this.modalOpen = !this.modalOpen;
+    this.openModal();
+  }
+
+  openModal() {
+    this.modalService.open(this.modalTemplate, { windowClass: 'modal-large' });
   }
 
 }

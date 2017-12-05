@@ -1,11 +1,24 @@
 @import "../../colors";
 
 .find-us {
+  p {
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: .5em;
+  }
+
+  h2 {
+    color: $DarkGreen;
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+
   .cities {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+
     .city {
       padding: 1em;
       text-align: center;
@@ -19,7 +32,7 @@
           text-decoration: none;
           color: $text-color;
           transition: all .2s ease-in-out 0s;
-          background-color: rgba(255,255,255,.6);
+          background-color: rgba(255, 255, 255, .6);
           span {
             display: block;
             font-size: 2em;
@@ -36,26 +49,33 @@
           }
         }
       }
-    }
 
+      &--selected {
+        .city__name {
+          a {
+            border: 2px solid $Goldenrod;
+          }
+        }
+      }
+    }
   }
 
   .map {
     padding: 1em;
-    h3{
+    h3 {
       font-weight: 400;
       margin-bottom: 1.5em;
     }
     agm-map {
-      height: 380px;
+      height: 400px;
     }
-    &--hint{
+    &--hint {
       width: 90%;
       margin: 1em auto;
       background-color: rgba(4, 84, 35, .2);
       text-align: center;
       color: white;
-      i{
+      i {
         display: block;
         padding: 5em;
         font-weight: 600;

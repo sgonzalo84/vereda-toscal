@@ -9,7 +9,7 @@
   height: 180px;
   background: transparent;
   display: flex;
-  transition: all .3s ease;
+  transition: height .3s ease, background-color .3s ease;
   &--small {
     height: 50px;
     background-color: white;
@@ -51,7 +51,7 @@
         height: 3px;
       }
     }
-    .hamburguer-bt.on{
+    .hamburguer-bt.on {
       .hamburguer-bt__stripe {
         background-color: white;
       }
@@ -67,7 +67,7 @@
   &__logo {
     flex-grow: 3;
     opacity: 1;
-    transition: all .3s ease-in-out 0s;
+    transition: all .1s ease-in-out 0s;
     background: url("../../assets/LogoVeredaToscal.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -147,16 +147,13 @@
   height: 100vh;
   position: relative;
   .background-image {
-    background-image: url("../../assets/b5.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    /* Full height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
+    height: 100vh;
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
   }
 
   .background-title {
@@ -165,13 +162,14 @@
     height: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(4, 124, 52, .1);
+    background-color: rgba(21, 153, 87, .2);
     color: white;
     text-align: right;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;
+
     h1, h2 {
       height: auto;
       width: 100%;
@@ -200,12 +198,42 @@
 
 @media (max-width: 768px) {
   .header {
+    height: 50px;
+    background-color: white;
     &__nav {
       display: none;
+    }
+    &__logo {
+      display: none;
+    }
+    &__logo-words {
+      opacity: 1;
+      height: auto;
+      line-height: 50px;
+      padding-left: 1em;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+    .hamburguer-bt {
+      top: 13px;
+      width: 35px;
+      height: 35px;
+      .hamburguer-bt__stripe {
+        background-color: $Goldenrod;
+        height: 3px;
+      }
     }
   }
   .header-background {
     .background-title {
+
+      //background: #06beb6;  /* fallback for old browsers */
+      //background: -webkit-linear-gradient(to bottom, #48b1bf, #06beb6);  /* Chrome 10-25, Safari 5.1-6 */
+      //background: linear-gradient(to bottom, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+color: $text-color;
+
       h1, h2 {
         padding: 0;
         text-align: center;
@@ -216,6 +244,9 @@
       }
       h2 {
         font-size: 1.3em;
+      }
+      .background-buttons {
+        margin-bottom: 6em;
       }
     }
   }

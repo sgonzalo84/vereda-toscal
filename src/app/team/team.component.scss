@@ -1,7 +1,30 @@
 @import "../../colors";
 
-app-team{
+app-team {
   display: block;
+}
+
+.modal-large {
+  .modal-dialog {
+    max-width: 85%;
+  }
+  .close {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+  }
+  .button--yellow {
+    border: none;
+    border-radius: 0;
+    background-color: $yellow;
+  }
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .team {
@@ -43,25 +66,6 @@ app-team{
         transition: all .4s ease 0s;
       }
 
-      &:hover {
-        cursor: pointer;
-        .name {
-          opacity: 1;
-          transform: scale(1, 1);
-          transition: all .6s ease 0s;
-        }
-        .title {
-          opacity: 1;
-        }
-
-        img {
-          transform: scale(1, 1);
-          background-position: top top;
-          -webkit-filter: grayscale(0.4) blur(2px);
-          filter: grayscale(0.4) blur(2px);
-          transition: .8s all ease 0s;
-        }
-      }
     }
 
     &__link {
@@ -69,20 +73,20 @@ app-team{
       width: 0;
       position: relative;
       text-align: center;
-      a{
+      a {
         display: inline-block;
         margin: 0 auto;
         width: auto;
-        i{
+        i {
           font-size: .7em;
         }
-        span{
+        span {
           display: block;
           font-size: .9em;
         }
       }
-      .button--yellow{
-        background-color: rgba( 227,138,28, .9) ;
+      .button--yellow {
+        background-color: rgba(227, 138, 28, .9);
       }
     }
 
@@ -117,91 +121,41 @@ app-team{
 
   }
 
-  .gallery li:hover:hover img {
-    opacity: 0.5;
-  }
+}
 
-  .close-button {
-    position: fixed;
-    right: 1em;
-    top: 25px;
-    font-size: 2.5em;
-    z-index: 3;
-    color: white;
-    opacity: 0;
-    transition: all .4s ease 0s;
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-    &--visible {
-      opacity: 1;
-    }
-  }
+@media (min-width: 768px) {
+  .team {
+    .gallery {
+      padding: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        &:hover {
+          cursor: pointer;
+          .name {
+            opacity: 1;
+            transform: scale(1, 1);
+            transition: all .6s ease 0s;
+          }
+          .title {
+            opacity: 1;
+          }
 
-  /*Image container*/
-  .menu-container {
-    position: fixed;
-    height: 100%;
-    .menu {
-      opacity: 0;
-      align-self: center;
-      transition: opacity .4s ease .5s;
-      transform: none;
-    }
-    .menu-sliders {
-      &:nth-child(odd) {
-        background: rgba(0, 0, 0, .9);
+          img {
+            transform: scale(1, 1);
+            background-position: top top;
+            -webkit-filter: grayscale(0.4) blur(2px);
+            filter: grayscale(0.4) blur(2px);
+            transition: .8s all ease 0s;
+          }
+        }
       }
     }
-  }
-
-  .image-viewer {
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    .image {
-      width: calc(60% - 2em);
-      flex-grow: 1;
-      padding: 1em;
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-    .text-container {
-      flex-grow: 1;
-      width: 40%;
-      color: white;
-      font-size: 1em;
-      text-align: left;
-      .text {
-        padding: 1em;
-
-      }
-      h1 {
-        font-size: 1.2em;
-        text-align: left;
-
-      }
-      h2 {
-        font-size: 1.1em;
-        text-align: left;
-        margin-bottom: 1em;
-      }
+    .gallery li:hover:hover img {
+      opacity: 0.5;
     }
   }
 }
-
-.team.menu-open{
-  .menu {
-    opacity: 1;
-  }
-}
-
-
-
 
 @media (max-width: 768px) {
   .team {
@@ -219,13 +173,13 @@ app-team{
       .image {
         width: 100%;
         display: flex;
-        align-items:center;
-        img{
+        align-items: center;
+        img {
           max-width: 90%;
           margin: 0 auto;
         }
       }
-      .text-container{
+      .text-container {
         min-height: 200px;
         max-height: 250px;
         overflow-y: auto;
@@ -235,6 +189,12 @@ app-team{
 }
 
 @media (max-width: 500px) {
+
+  .modal-large {
+    .modal-dialog {
+      max-width: 95%;
+    }
+  }
   .team {
     .gallery {
       li {
@@ -244,7 +204,7 @@ app-team{
         margin-bottom: 2em;
       }
     }
-    .text-container{
+    .text-container {
       max-height: 60vh;
     }
   }

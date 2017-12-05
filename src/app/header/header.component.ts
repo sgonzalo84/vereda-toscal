@@ -1,5 +1,5 @@
-import {Component, HostListener, Input, OnInit, Inject, ViewEncapsulation} from '@angular/core';
-import {DOCUMENT} from '@angular/platform-browser';
+import { Component, HostListener, Input, OnInit, Inject, ViewEncapsulation } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +12,13 @@ export class HeaderComponent implements OnInit {
   @Input() menuItems: any[];
   smallHeader = false;
   menuOpen = false;
+  showBgImage = false;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
   }
 
   ngOnInit() {
+    this.shouldShowImage(window.innerWidth);
   }
 
   @HostListener('window:scroll', [])
@@ -29,7 +31,18 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.shouldShowImage(event.target.innerWidth);
+  }
+
   onMenuClicked(menuStatus) {
     this.menuOpen = menuStatus;
+  }
+
+  shouldShowImage(currentWidth: number) {
+    if (currentWidth > 768) {
+      this.showBgImage = true;
+    }
   }
 }

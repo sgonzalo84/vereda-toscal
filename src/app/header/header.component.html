@@ -22,7 +22,9 @@
   </div>
 
   <div class="header-background">
-    <div class="background-image"></div>
+    <div *ngIf="showBgImage" class="background-image">
+      <img src="../../assets/b5.jpg">
+    </div>
     <div class="background-title">
       <h1>El valor de lo natural</h1>
       <h2>Huevos camperos, gallinas en libertad</h2>

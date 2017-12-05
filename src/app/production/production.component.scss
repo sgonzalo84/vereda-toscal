@@ -4,7 +4,7 @@
     text-align: justify;
   }
   .carousel-container {
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
     padding: 2em;
     .carousel-inner, .carousel-item{
@@ -21,7 +21,7 @@
 @media (max-width: 768px) {
   .produccion {
     .carousel-container {
-      width: 85%;
+      width: 90%;
     }
   }
 }

@@ -11,3 +11,19 @@
 @import 'reset';
 @import 'animations';
 
+.highlight{
+  color: $DarkGoldenrod;
+}
+
+.top-line{
+  &:before{
+    width: calc(100% - 2em);
+    height: 2px;
+    display: block;
+    content: '';
+    margin: 1.5em 0 1em 1em ;
+    background-color: $Goldenrod;
+  }
+}
+
+

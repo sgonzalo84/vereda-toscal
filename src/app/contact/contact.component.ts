@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mailString = 'mailto:carlosmanuel.rubio@gmail.com?subject="Consulta desde la web"&body=';
+    this.mailString = 'mailto:veredadeltoscal@gmail.com?subject="Consulta desde la web"&body=';
   }
 
   @HostListener('window:scroll', ['$event'])

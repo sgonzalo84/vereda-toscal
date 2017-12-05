@@ -26,6 +26,7 @@
     }
     img{
       margin-left: 1em;
+      max-width: 85px;
     }
   }
 }
@@ -43,6 +44,13 @@
     .carousel-container {
       width: 99%;
       padding: 1em 0;
+    }
+    .text-with-image {
+      flex-direction: column;
+      img{
+        align-self: center;
+        margin-top: 1em;
+      }
     }
   }
 }

@@ -48,7 +48,6 @@ app-team {
     li {
       text-align: center;
       position: relative;
-      margin: 1em;
       display: inline-block;
       overflow: hidden;
       background-color: black;
@@ -158,6 +157,11 @@ app-team {
 }
 
 @media (max-width: 767px) {
+  .modal-large {
+    .modal-dialog {
+      max-width: 95%;
+    }
+  }
   .team {
     .gallery {
       &__link {
@@ -189,12 +193,6 @@ app-team {
 }
 
 @media (max-width: 500px) {
-
-  .modal-large {
-    .modal-dialog {
-      max-width: 95%;
-    }
-  }
   .team {
     .gallery {
       li {
